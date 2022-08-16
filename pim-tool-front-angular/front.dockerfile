@@ -4,9 +4,6 @@ FROM node:16-alpine
 RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
-
-ENV PORT=4200
-
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
@@ -23,4 +20,4 @@ COPY . /usr/src/app
 
 EXPOSE 4200
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "start" ,"--host 0.0.0.0"]
