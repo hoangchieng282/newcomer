@@ -1,0 +1,80 @@
+{
+
+  "or": "or",
+  "please": "Please",
+
+  "search_empty_results": "No results found",
+  "item(s)_selected" : "item(s) selected",
+  "delete_selected_item(s)": "delete selected items",
+  "visas_not_exist": "The following visas do not exist",
+  "NEW": "New",
+  "FIN": "Finished",
+  "INP": "In progress",
+  "PLA": "Planned",
+  "header": {
+    "title": "Project Information Management",
+    "help": "Help",
+    "logout": "Logout",
+    "login": "Login",
+    "app_title": "Pim Tool"
+  },
+
+  "form": {
+    "new": "New Project",
+    "edit": "Edit Project information",
+
+    "project_number": "Project Number",
+    "project_name": "Project Name",
+    "customer": "Customer",
+    "group": "Group",
+    "members": "Members",
+    "status": "Status",
+    "start_date": "Start Date",
+    "end_date": "End Date",
+    "cancel": "Cancel",
+    "create_project": "Create Project",
+    "mandatory_fields": "Please enter all the mandatory fields (*)",
+    "list": "Project List",
+
+    "place_holder": {
+      "enter": "Enter"
+    }
+  },
+
+  "table": {
+    "number": "Number",
+    "name": "Name",
+    "new": "New",
+    "project_list": "Project List",
+    "project": "Project",
+    "customer": "Customer",
+    "supplier": "Supplier",
+    "list" : "Project list"
+  },
+  "sideBar": {
+    "new": "New",
+    "project_list": "Project List",
+    "project": "Project",
+    "customer": "Customer",
+    "supplier": "Supplier"
+  },
+
+
+
+  "actions": {
+    "delete": "Delete",
+    "search":"Search",
+    "search_project": "Search Project ",
+    "reset_search": "Reset Search",
+    "edit_project": "Edit Project"
+  },
+
+  "error": {
+    "message": "Unexpected error occurred",
+    "please": "Please",
+    "contact": "contact your administrator",
+    "or": "or",
+    "back": "back to search project"
+  }
+
+}

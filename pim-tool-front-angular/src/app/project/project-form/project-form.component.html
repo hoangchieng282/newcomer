@@ -1,0 +1,143 @@
+<div class="container ">
+  <h5 *ngIf="!editMode; else other_content">{{'form.new' | translate}}</h5>
+  <ng-template #other_content><h5>{{'form.edit' | translate}}</h5></ng-template>
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <div class="alert alert-danger alert-dismissible fade show" role="alert"
+       *ngIf="!onCheckmandatory">
+    {{'form.mandatory_fields' | translate}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+    <div class="form-group row m-5">
+      <label for="projectNumber" class="col-sm-2 col-form-label">{{'form.project_number' | translate}} <span
+        class="text-danger">*</span></label>
+      <div class="col-md-3">
+        <input type="text"
+               id="projectNumber"
+               formControlName="projectNumber"
+               class="form-control"
+               [attr.disabled]="editMode ? true : null"
+               [ngClass]="{'highlight': onCheckNumber()}">
+      </div>
+            <div class="col-md-5">
+              <span
+                *ngIf="projectExisted"
+                class="text-danger">The project number already existed. Please select a different project number</span>
+            </div>
+    </div>
+
+    <div class="form-group row  m-5">
+      <label for="projectName" class="col-sm-2 col-form-label">{{'form.project_name' | translate}} <span
+        class="text-danger">*</span></label>
+      <div class="col-md-8">
+        <input type="text"
+               id="projectName"
+               formControlName="projectName"
+               class="form-control"
+               [ngClass]="{'highlight': onCheckName()}">
+      </div>
+    </div>
+
+    <div class="form-group row  m-5">
+      <label for="customer" class="col-sm-2 col-form-label">{{'form.customer' | translate}} <span
+        class="text-danger">*</span></label>
+      <div class="col-md-8">
+
+        <input type="text"
+               id="customer"
+               formControlName="customer"
+               class="form-control"
+               [ngClass]="{'highlight': onCheckCustomer()}">
+      </div>
+    </div>
+
+    <div class="form-group row  m-5">
+      <label class="col-sm-2 col-form-label">{{'form.group' | translate}} <span class="text-danger">*</span></label>
+      <div class="col-md-3">
+        <select class="form-select"
+                id="groupLeader"
+                formControlName="groupLeader"
+                class="form-control"
+                [ngClass]="{'highlight': onCheckGroupLeader()}">
+          <option *ngIf="!editMode" selected></option>
+          <option *ngFor="let group of groups">{{group.leaderVisa}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row  m-5">
+      <label for="employees" class="col-sm-2 col-form-label">{{'form.members' | translate}}</label>
+      <div class="col-md-8">
+
+        <input type="text"
+               id="employees"
+               formControlName="employees"
+               class="form-control"
+               [ngClass]="{'highlight': onCheckMember()}">
+      </div>
+      <div class="col-md-8">
+              <span
+                *ngIf="onCheckMember()"
+                class="text-danger">Only allow A-Z, a-z and delimiter !
+              </span>
+              <span class="text-danger"
+                    *ngIf="(notfoundVisaArray?.length >0 ) && isSubmitted">
+                {{'visas_not_exist' | translate}}: <span *ngFor="let visa of notfoundVisaArray">{{visa}} </span>
+              </span>
+      </div>
+    </div>
+
+    <div class="form-group row  m-5">
+      <label class="col-sm-2 col-form-label">{{'form.status' | translate}} <span class="text-danger">*</span></label>
+      <div class="col-md-3">
+        <select class="form-select"
+                id="status"
+                formControlName="status"
+                class="form-control">
+          <option *ngFor="let status of statusOptions" [value]="status.name">{{status.name | translate}}</option>
+
+        </select>
+      </div>
+    </div>
+    <div class="form-group row  m-5">
+      <label for="startDate" class="col-sm-2 col-form-label">{{'form.start_date' | translate}} <span
+        class="text-danger">*</span></label>
+      <div class="col-md-3">
+
+        <input type="date"
+               id="startDate"
+               formControlName="startDate"
+               class="form-control"
+               [ngClass]="{'highlight': onCheckStartDate()}">
+      </div>
+
+      <label for="endDate" class="col-sm-2 col-form-label">{{'form.end_date' | translate}}</label>
+      <div class="col-md-3">
+        <input type="date"
+               id="endDate"
+               formControlName="endDate"
+               class="form-control"
+               [ngClass]="{'highlight': onCheckEndDate()}">
+      </div>
+    </div>
+    <div class="from-group row m-5">
+      <div class="col-md-10">
+              <span class="text-danger"
+                    *ngIf="dateNotValid"
+              >End date must be after Start date. Please select a different date</span>
+      </div>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-end">
+      <div class="p-2">
+        <button (click)="gotoProjectList()" type="button"
+                class="btn btn-secondary">{{'form.cancel' | translate}}</button>
+      </div>
+      <div class="p-2">
+        <button type="submit" class="btn btn-primary"><div *ngIf="!editMode; else other_content">{{'form.new' | translate}}</div>
+          <ng-template #other_content><div>{{'form.edit' | translate}}</div></ng-template>
+        </button>
+      </div>
+    </div>
+  </form>
+
+</div>

@@ -1,0 +1,71 @@
+{
+
+  "or": "(FR)or",
+  "please": "(FR)Please",
+
+  "search_empty_results": "(FR)No results found",
+  "item(s)_selected" : "(FR)item(s) selected",
+  "delete_selected_item(s)": "(FR)delete selected items",
+  "visas_not_exist": "(FR)The following visas do not exist",
+  "NEW": "(FR)New",
+  "FIN": "(FR)Finished",
+  "INP": "(FR)In progress",
+  "PLA": "(FR)Planned",
+
+  "header": {
+    "help": "(FR)Help",
+    "logout": "(FR)Logout",
+    "login": "(FR)Login",
+    "title": "(FR)Project Information Management"
+  },
+
+  "form": {
+    "new": "(FR)New Project",
+    "edit": "(FR)Edit Project information",
+    "project_number": "(FR)Project Number",
+    "project_name": "(FR)Project Name",
+    "customer": "(FR)Customer",
+    "group": "(FR)Group",
+    "members": "(FR)Members",
+    "status": "(FR)Status",
+    "start_date": "(FR)Start Date",
+    "end_date": "(FR)End Date",
+    "cancel": "(FR)Cancel",
+    "create_project": "(FR)Create Project",
+    "mandatory_fields": "(FR)Please enter all the mandatory fields (*)",
+    "place_holder": {
+      "enter": "(FR)Enter"
+    }
+
+  },
+
+  "table": {
+    "number": "(FR)Number",
+    "name": "(FR)Name",
+    "list": "(FR)Project List"
+  },
+
+  "sideBar": {
+    "new": "(FR)New",
+    "project_list": "(FR)Project List",
+    "project": "(FR)Project",
+    "customer": "(FR)Customer",
+    "supplier": "(FR)Supplier"
+  },
+
+  "actions": {
+    "delete": "(FR)Delete",
+    "search":"(FR)Search",
+    "search_project": "(FR)Search Project",
+    "reset_search": "(FR)Reset Search",
+    "edit_project": "(FR)Edit Project"
+  },
+
+  "error": {
+    "message": "(FR)Unexpected error occurred",
+    "please": "(FR)Please",
+    "contact": "(FR)contact your administrator",
+    "or": "(FR)or",
+    "back": "(FR)back to search project"
+  }
+}
