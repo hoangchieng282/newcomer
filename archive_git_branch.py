@@ -31,6 +31,7 @@ password = args.password
 
 repos =  Repo(repo)
 try:
+    print(target)
     aiss = repos.git.checkout(target)
     print(aiss)
 except:
