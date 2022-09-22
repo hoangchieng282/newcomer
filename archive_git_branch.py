@@ -1,5 +1,4 @@
 import argparse
-from msilib.schema import Error
 from git import Repo
 
 
