@@ -34,7 +34,7 @@ try:
     aiss = repos.git.checkout(target)
     print(aiss)
 except:
-    # raise Error("Your branch doesn't exist")
-    print("Your branch doesn't exist")
+    raise Exception("Your branch doesn't exist")
+    # print("Your branch doesn't exist")
 
 print("ok")
