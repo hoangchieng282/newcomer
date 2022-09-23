@@ -1,13 +1,12 @@
 import argparse
 from git import Repo
+from common import *
 
 # Author: chih
 # Time modified:   09/23/2022
-parser = argparse.ArgumentParser()
-
-# group = parser.add_mutually_exclusive_group()
 
 # **************************************** Argument declare *******************************************
+parser = argparse.ArgumentParser()
 parser.add_argument("-r", "--repopath", type=str, help="the path to your local git repository. Just leave it empty")
 
 parser.add_argument("-b", "--branch", type=str, help="Branch to be archived")
@@ -44,7 +43,7 @@ try:
     aiss = repo.git.checkout(target)
     print(aiss)
 except:
-    raise Exception("Your branch doesn't exist")
+    print(red("Your branch doesn't exist"))
     # print("Your branch doesn't exist")
 
 print("ok")
