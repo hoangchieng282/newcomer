@@ -41,8 +41,8 @@ remote = repo.remote()              # Set to a remote object (Defaults to 'origi
 
 try:
     print(target)
-    # aiss = repo.git.checkout(target)
-    # print(aiss)
+    aiss = repo.git.checkout(target)
+    print(aiss)
 except:
     raise Exception("Your branch doesn't exist")
     # print("Your branch doesn't exist")

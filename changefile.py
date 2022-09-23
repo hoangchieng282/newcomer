@@ -26,3 +26,4 @@ def delete_remote_branches(remote_url, branches):
                 remote.push(refspec=(":%s" % repo_branch.remote_head)) # remote_head = the branch you want to delete Example: "origin/my-branch"
 
 # Note: Could add some logic to delete your local cloned repo when you're done
+print("hi")
