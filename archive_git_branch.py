@@ -24,13 +24,14 @@ parser.add_argument("-p", "--password", type=str,
 args = parser.parse_args()
 branch = args.branch
 target = args.target
-repo = args.repo if args.repo else "c:/Users/chih/Desktop/newcomer"
+repo = args.repo if args.repo else "."
 # the default value here is just my local path to the custom git folder. You have to modified the path in order to use this cript on default
 username = args.username
 password = args.password
 
 repos =  Repo(repo)
 try:
+    print(target)
     aiss = repos.git.checkout(target)
     print(aiss)
 except:
